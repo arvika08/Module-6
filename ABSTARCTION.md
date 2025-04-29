@@ -1,44 +1,88 @@
-# Exp.No:28  
+# Exp.No:6.a
 ## Abstraction
 
----
-
 ### AIM  
-To write a Python program to define the abstract base class named `Polygon` and also define the abstract method. This base class is inherited by various subclasses. Implement the abstract method in each subclass. Create objects of the subclasses and invoke the `sides()` method.
-
----
-
+To write an abstract class Animal with an abstract mathod move which can be implemented by the subclasses of the animal class.
 ### ALGORITHM
 
-1. **Start the Program.**
-2. **Import the ABC class** from the `abc` module to implement abstraction.
-3. **Define the abstract base class Polygon**:
-   - Inherit from `ABC` (Abstract Base Class).
-   - Define an abstract method `sides()` with no implementation.
-4. **Define the Triangle class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Triangle has 3 sides"`.
-5. **Define the Pentagon class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Pentagon has 5 sides"`.
-6. **Define the Hexagon class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Hexagon has 6 sides"`.
-7. **Define the Square class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"I have 4 sides"`.
-8. **Create an object `t` of the Triangle class** and call the `sides()` method to print the number of sides.
-9. **Create an object `s` of the Square class** and call the `sides()` method to print the number of sides.
-10. **Create an object `p` of the Pentagon class** and call the `sides()` method to print the number of sides.
-11. **Create an object `k` of the Hexagon class** and call the `sides()` method to print the number of sides.
-12. **End the Program.**
+Define an Abstract Base Class (ani):
 
----
+The class ani inherits from ABC, making it an abstract class.
+
+An abstract method do() is defined using @abstractmethod. This means any subclass must implement the do() method.
+
+Create Subclasses of ani:
+
+hum, mon, dog, and lion are subclasses that inherit from ani.
+
+Each subclass provides its own implementation of the do() method, as required by the abstract base class:
+
+hum class: Defines do() to print "I can walk and run".
+
+mon class: Defines do() to print "I can crawl".
+
+dog class: Defines do() to print "I can bark".
+
+lion class: Defines do() to print "I can roar".
+
+Instantiate Objects and Call do():
+
+Objects h, m, d, and l are created from the respective classes (hum, mon, dog, lion).
 
 ### PROGRAM
+from abc import ABC,abstractmethod
 
-```
+class ani(ABC):
 
+    @abstractmethod
+    
+    def do(self):
+    
+        pass
+        
+class hum(ani):
 
-```
+    def do(self):
+    
+        print("I can walk and run")
+        
+class mon(ani):
+
+    def do(self):
+    
+        print("I can crawl")
+        
+class dog(ani):
+
+    def do(self):
+    
+        print("I can bark")
+        
+class lion(ani):
+
+    def do(self):
+    
+        print("I can roar")
+h=hum()
+
+h.do()
+
+m=mon()
+
+m.do()
+
+d=dog()
+
+d.do()
+
+l=lion()
+
+l.do()
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/ebec2401-f85a-4913-ae7b-775d689b3a5e)
+
 
 
 ### RESULT
+Thus, an abstract class Animal with an abstract method move can be implemented by the subclasses of the animal class was implemented successfully.
